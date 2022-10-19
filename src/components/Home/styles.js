@@ -5,8 +5,12 @@ export const Rocket = styled.div`
   display: flex;
   justify-content: center;
 
+  margin-bottom: 30px;
+
   img {
     border-radius: 10%;
-    height: 70%;
+    width: 90%;
+    max-width: 667px;
+    max-height: 500px;
   }
 `

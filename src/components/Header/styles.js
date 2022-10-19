@@ -22,11 +22,12 @@ export const HeaderComponent = styled.header`
 `
 
 export const Title = styled.h1`
-  font-size: 40px;
+  font-size: 45px;
   font-weight: bold;
   color: var(--theme-light);
 
   margin-bottom: 35px;
+  text-align: center;
   cursor: pointer;
 `
 
@@ -42,10 +43,14 @@ export const Navigate = styled.nav`
   border-bottom: 1px solid var(--theme-light);
 
   h1 {
-    font-size: 20px;
+    font-size: 30px;
     font-weight: bold;
     color: var(--not-selected);
 
     cursor: pointer;
+  }
+
+  @media (max-width: 500px) {
+    flex-direction: column;
   }
 `
