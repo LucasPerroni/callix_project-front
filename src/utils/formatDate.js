@@ -20,8 +20,14 @@ export default function formatDate(date_to_format) {
   const day = date.getUTCDate()
   const year = date.getUTCFullYear()
 
-  const hour = date.getUTCHours()
-  const minute = date.getUTCMinutes()
+  const hour = date.getUTCHours().toLocaleString("en-US", {
+    minimumIntegerDigits: 2,
+    useGrouping: false,
+  })
+  const minute = date.getUTCMinutes().toLocaleString("en-US", {
+    minimumIntegerDigits: 2,
+    useGrouping: false,
+  })
 
   return { day, month, year, hour, minute }
 }

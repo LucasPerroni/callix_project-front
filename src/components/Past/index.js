@@ -1,7 +1,10 @@
-import { useEffect } from "react"
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import { ThreeCircles } from "react-loader-spinner"
 
 import { spacexRepository } from "../../repositories/spacexRepository"
+import LaunchCard from "../LaunchCard"
+
+import { Main } from "../Next/style"
 
 export default function PastLaunches() {
   const [launchData, setLaunch] = useState({})
@@ -13,7 +16,15 @@ export default function PastLaunches() {
       .catch(({ response }) => console.log(response))
   }, [])
 
-  console.log(launchData)
-
-  return <></>
+  return (
+    <Main>
+      {launchData.launches ? (
+        launchData.launches.reverse().map((launch, i) => {
+          return <LaunchCard key={i} launch={launch} />
+        })
+      ) : (
+        <ThreeCircles color="#326cde" />
+      )}
+    </Main>
+  )
 }

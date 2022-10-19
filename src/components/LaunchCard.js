@@ -10,7 +10,7 @@ export default function LaunchCard({ launch }) {
   const youtubeUrl = `https://www.youtube.com/watch?v=${launch.links.youtube_id}`
 
   return (
-    <Card sx={{ maxWidth: 345, backgroundColor: "#1E1E1E", color: "white" }}>
+    <Card sx={{ maxWidth: 345, minWidth: 345, backgroundColor: "#1E1E1E", color: "white" }}>
       <CardActionArea>
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">

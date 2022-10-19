@@ -1,8 +1,9 @@
-import { useEffect } from "react"
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import { ThreeCircles } from "react-loader-spinner"
 
 import { spacexRepository } from "../../repositories/spacexRepository"
 import LaunchCard from "../LaunchCard"
+
 import { Main } from "./style"
 
 export default function NextLaunch() {
@@ -15,5 +16,9 @@ export default function NextLaunch() {
       .catch(({ response }) => console.log(response))
   }, [])
 
-  return <Main>{launchData.launch ? <LaunchCard launch={launchData.launch} /> : <></>}</Main>
+  return (
+    <Main>
+      {launchData.launch ? <LaunchCard launch={launchData.launch} /> : <ThreeCircles color="#326cde" />}
+    </Main>
+  )
 }
