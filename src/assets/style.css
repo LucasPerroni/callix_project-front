@@ -1,6 +1,6 @@
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #1c263a;
+    background-color: var(--background);
 }
 
 * {
@@ -9,4 +9,5 @@ body {
 
     --theme-light: #326cde;
     --not-selected: #737373;
+    --background: #1c263a;
 }
